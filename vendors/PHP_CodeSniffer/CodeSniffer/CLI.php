@@ -542,7 +542,6 @@ class PHP_CodeSniffer_CLI
         }
 
         $phpcs->setCli($this);
-		var_dump( $values['local']); exit;
         $phpcs->process(
             $values['files'],
             $values['standard'],
