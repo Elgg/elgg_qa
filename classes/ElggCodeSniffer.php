@@ -13,7 +13,7 @@ class ElggCodeSniffer {
 		require_once dirname(dirname(__FILE__)) . '/vendors/PHP_CodeSniffer/CodeSniffer.php';
 		$this->sniffer = new PHP_CodeSniffer(0, 0, 'utf-8', false);
 		$this->standard = dirname(dirname(__FILE__)) . '/standard/Elgg';
-		$this->ignores = array('*/tests/*', '*/test/*', '*/upgrades/*', '*/vendors/*');
+		$this->ignores = array('*/tests/*', '*/test/*', '*/upgrades/*', '*/vendors/*', '*/deprecated*');
 	}
 
 	/**
@@ -37,7 +37,7 @@ class ElggCodeSniffer {
 
 		set_time_limit(0);
 
-		$this->sniffer->setIgnorePatterns($ignores);
+		$this->sniffer->setIgnorePatterns($this->ignores);
 
 		$this->sniffer->process($this->files, $this->standard);
 		return $this->prepareReport($this->sniffer->getFilesErrors());
