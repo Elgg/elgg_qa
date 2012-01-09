@@ -1,14 +1,23 @@
 <?php
 /**
- *
+ * Select options for code sniffing
  */
+
+$plugins = elgg_get_plugins('all');
+$reducer = function($plugin) {
+	return $plugin->getID();
+};
+$options = array_map($reducer, $plugins);
+sort($options);
+
+array_unshift($options, 'engine');
 
 echo '<div>';
 echo '<label>' . elgg_echo('qa:sniffer:label:component') . ':</label> ';
 echo elgg_view('input/dropdown', array(
 	'name' => 'component',
 	'value' => 'engine',
-	'options' => array('engine', 'blog'),
+	'options' => $options,
 ));
 echo '</div>';
 
