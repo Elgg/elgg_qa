@@ -6,8 +6,8 @@
 elgg_register_event_handler('init', 'system', 'qa_init');
 
 function qa_init() {
+	require 'vendor/autoload.php';
 	elgg_register_admin_menu_item('develop', 'sniffer', 'develop_tools');
-
 	elgg_register_page_handler('qa', 'qa_page_handler');
 }
 
