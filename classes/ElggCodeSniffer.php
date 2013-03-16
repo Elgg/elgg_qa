@@ -13,13 +13,13 @@ class ElggCodeSniffer {
 		$this->sniffer = new PHP_CodeSniffer(0, 0, 'utf-8', false);
 		$this->standard = dirname(dirname(__FILE__)) . '/vendor/elgg/sniffs/elgg.xml';
 		$this->ignores = array(
-			'*/tests/*',
-			'*/test/*',
-			'*/upgrades/*',
-			'*/vendors/*',
-			'*/vendor/*',
-			'*/deprecated*',
-			'*/languages/*',
+			'*/tests/*' => 'absolute',
+			'*/test/*' => 'absolute',
+			'*/upgrades/*' => 'absolute',
+			'*/vendors/*' => 'absolute',
+			'*/vendor/*' => 'absolute',
+			'*/deprecated*' => 'absolute',
+			'*/languages/*' => 'absolute',
 		);
 	}
 
