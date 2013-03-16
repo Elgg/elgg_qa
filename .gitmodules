@@ -1,3 +1,0 @@
-[submodule "standard/Elgg"]
-	path = standard/Elgg
-	url = git://github.com/Elgg/elgg-coding-standards.git
