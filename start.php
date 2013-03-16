@@ -6,9 +6,12 @@
 elgg_register_event_handler('init', 'system', 'qa_init');
 
 function qa_init() {
-	require 'vendor/autoload.php';
-	elgg_register_admin_menu_item('develop', 'sniffer', 'develop_tools');
-	elgg_register_page_handler('qa', 'qa_page_handler');
+	if (include 'vendor/autoload.php') {
+		elgg_register_admin_menu_item('develop', 'sniffer', 'develop_tools');
+		elgg_register_page_handler('qa', 'qa_page_handler');		
+	} else {
+		elgg_add_admin_notice('elgg_qa:composre', elgg_echo('qa:error:composer'));
+	}
 }
 
 function qa_page_handler($route) {

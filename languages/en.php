@@ -17,6 +17,8 @@ $english = array(
 	'qa:sniffer:label:line_num' => 'Line Number',
 	'qa:sniffer:label:severity' => 'Severity',
 	'qa:sniffer:label:message' => 'Description',
+
+	'qa:error:composer' => "You must run 'composer install' to use the QA plugin. See the README.",
 );
 
 add_translation('en', $english);
